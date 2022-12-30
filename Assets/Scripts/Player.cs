@@ -6,62 +6,42 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D myBody;
-
     private Animator anim;
-
     private SpriteRenderer sr;
-
+    private Vector2 movementInput;
     private float movementX;
-
-    [SerializeField]
-    private float speed = 10f;
-
-
-    private PlayerControllerInput playerInputController;
-
-    private Vector2 move;
+    public float playerSpeed = 2.0f;
 
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-
-        playerInputController = new PlayerControllerInput();
         
     }
 
-    private void OnMovement(InputValue obj)
-    {
-        move = obj.Get<Vector2>();
-        movementX = obj.Get<Vector2>().x;
-    }
-
-    void AnimatePlayer() {
-        
-        if(movementX > 0){
-            sr.flipX = false;
-        } 
-        else if(movementX < 0){
-            sr.flipX = true;
-        }    
-        
+     void OnMovement(InputValue value){
+        movementInput = value.Get<Vector2>();
     }
 
     void FixedUpdate(){
-        myBody.MovePosition(myBody.position + move * speed * Time.fixedDeltaTime);
+
+        myBody.MovePosition(myBody.position + movementInput * playerSpeed * Time.fixedDeltaTime);
         AnimatePlayer();
+    }
+
+    public void AnimatePlayer(){
+        movementX = Input.GetAxisRaw("Horizontal");
+        if(movementX < 0){
+            sr.flipX = true;
+        } else  {
+            sr.flipX = false;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
     }
 }
