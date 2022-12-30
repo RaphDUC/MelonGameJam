@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour
+public class PlayerSelect : MonoBehaviour
 {
 
+    public static PlayerSelect instance;
     [SerializeField]
     private GameObject[] players;
 
     [HideInInspector]
     public GameObject chosenPlayer;
 
-    public static MenuController instance;
+    void Awake(){
 
-    void Awake() {
         if(!instance){
-            instance = this;
-        } 
-        else {
-            Destroy(gameObject);
-        }
+        instance = this;
+    } else {
+        Destroy(gameObject);
     }
+}
 
     public void PlayGame(){
 
@@ -40,5 +39,4 @@ public class MenuController : MonoBehaviour
 
         }
 
-   
 }
