@@ -5,57 +5,52 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float moveForce = 10f;
-
-    [SerializeField]
-    private float jumpForce = 11f;
-
-    private float movementX;
-
     private Rigidbody2D myBody;
+
+    private Animator anim;
 
     private SpriteRenderer sr;
 
-    private Animator anim;
-    private string WALK_ANIMATION = "Walk";
+    private float movementX;
 
-    private bool isGrounded = true;
+    [SerializeField]
+    private float speed = 10f;
+
 
     private PlayerControllerInput playerInputController;
-    private InputAction movement;
+
+    private Vector2 move;
 
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
 
         playerInputController = new PlayerControllerInput();
         
     }
 
-    private void OnEnable(){
-
-        movement = playerInputController.Player.Movement;
-        movement.Enable();
-
-        playerInputController.Player.Jump.performed += doJump;
-        playerInputController.Player.Jump.Enable();
-
+    private void OnMovement(InputValue obj)
+    {
+        move = obj.Get<Vector2>();
+        movementX = obj.Get<Vector2>().x;
     }
 
-    private void OnDisable(){
-        movement.Disable();
-        playerInputController.Player.Jump.Disable();
+    void AnimatePlayer() {
+        
+        if(movementX > 0){
+            sr.flipX = false;
+        } 
+        else if(movementX < 0){
+            sr.flipX = true;
+        }    
+        
     }
 
-    private void doJump(InputAction.CallbackContext obj){
-
-        if(Input.GetButtonDown("Jump") && isGrounded){
-            isGrounded = false;
-            myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        }
+    void FixedUpdate(){
+        myBody.MovePosition(myBody.position + move * speed * Time.fixedDeltaTime);
+        AnimatePlayer();
     }
 
     // Start is called before the first frame update
@@ -67,44 +62,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMoveKeyboard();
-        AnimatePlayer();
-       
-    }
-
-    void PlayerMoveKeyboard()
-    {
-        movementX = Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(movementX, 0f, 0f) * moveForce * Time.deltaTime;
-    }
-
-    void AnimatePlayer() {
-
-        if(movementX > 0){
-            anim.SetBool(WALK_ANIMATION, true);
-            sr.flipX = false;
-        } 
-        else if(movementX < 0){
-            anim.SetBool(WALK_ANIMATION, true);
-            sr.flipX = true;
-        }
-            else {
-            anim.SetBool(WALK_ANIMATION, false);
-        }        
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Ground")){
-            isGrounded = true;
-        } else if(collision.gameObject.CompareTag("Monster")) {
-            Destroy(gameObject);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("Monster")) {
-            Destroy(gameObject);
-        } 
+      
     }
 }
