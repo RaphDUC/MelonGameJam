@@ -206,9 +206,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1955952546}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1743175090}
+        m_TargetAssemblyTypeName: PlayerSelect, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1519220389, guid: e548b764e06a9a54e818cff66c89d442, type: 3}
+  m_Sprite: {fileID: -163436590, guid: 895bf3b4f8d32d340be3f9a2c619025c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1955952546}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1743175090}
+        m_TargetAssemblyTypeName: PlayerSelect, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -833,8 +833,6 @@ GameObject:
   - component: {fileID: 1955952549}
   - component: {fileID: 1955952548}
   - component: {fileID: 1955952547}
-  - component: {fileID: 1955952551}
-  - component: {fileID: 1955952552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -928,33 +926,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1955952551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955952546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e5746b60b62b14ca474467fd155600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players:
-  - {fileID: 2582746610903084458, guid: 7900e51abadd25544bf852afcd31e0a6, type: 3}
-  - {fileID: 1278864774365795570, guid: 90854ff0e8018934dbe16f4d197aa0d8, type: 3}
-  chosenPlayer: {fileID: 0}
---- !u!114 &1955952552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955952546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae3ee06d12edaa4b9a940aa78aa6b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  players: []
-  chosenPlayer: {fileID: 0}

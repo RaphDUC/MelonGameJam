@@ -13,6 +13,8 @@ public class PlayerSelect : MonoBehaviour
     [HideInInspector]
     public GameObject chosenPlayer;
 
+    public GameObject secondPlayer;
+
     void Awake(){
 
         if(!instance){
@@ -28,9 +30,11 @@ public class PlayerSelect : MonoBehaviour
         
             if(indexPlayer == "0"){
                 chosenPlayer = players[0];
+                secondPlayer = players[1];
             } 
             else if(indexPlayer == "1") {
                 chosenPlayer = players[1];
+                secondPlayer = players[0];
             }
 
         SceneManager.LoadScene("Gameplay");

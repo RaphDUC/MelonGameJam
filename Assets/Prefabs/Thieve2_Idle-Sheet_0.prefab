@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5615952028918316681}
   - component: {fileID: 5615952028918316680}
   - component: {fileID: 5615952028918316683}
+  - component: {fileID: 123873860251944326}
   m_Layer: 0
   m_Name: Thieve2_Idle-Sheet_0
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -352701601
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1043607858, guid: 80519dd12fb95f94e930864574ab6734, type: 3}
+  m_Sprite: {fileID: -163436590, guid: 895bf3b4f8d32d340be3f9a2c619025c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d65364c0bbb0654b958c1b19a94edbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  playerSpeed: 2
 --- !u!61 &5615952028918316680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: dfaf991ca5cbe274098085341aea42b1, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 04efffe90e3720d4b9ecf6da549b7113, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -178,3 +179,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &123873860251944326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5615952028918316682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d65364c0bbb0654b958c1b19a94edbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 2
