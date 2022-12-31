@@ -1150,7 +1150,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231301056
 GameObject:
@@ -3839,8 +3839,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1365059419}
-        m_TargetAssemblyTypeName: PlayerCreater, Assembly-CSharp
-        m_MethodName: JoinPlayer
+        m_TargetAssemblyTypeName: CreatingPlayer, Assembly-CSharp
+        m_MethodName: PlayerJoined
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3856,16 +3856,16 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 2f792ebf-a303-4892-9a1a-62829e7dfc8e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 3817866061188706352, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
+  m_PlayerPrefab: {fileID: 5615952028918316682, guid: c7b9f9cfb2473d74ebdc3b7c3c160bea, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -3882,13 +3882,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365059416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3486571, y: 0.7997335, z: 58.788185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1365059419
 MonoBehaviour:
@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365059416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ccee7e06ade92f4abc3a228dccba145, type: 3}
+  m_Script: {fileID: 11500000, guid: 10a94bb86dc9e9a4caccfcc0d1d7fc43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   newPlayer: {fileID: 0}
@@ -4720,7 +4720,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1558065385
 GameObject:
@@ -4804,7 +4804,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584500132
 GameObject:
@@ -5056,7 +5056,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668439631
 GameObject:
