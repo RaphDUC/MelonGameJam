@@ -33,9 +33,14 @@ public class Player : MonoBehaviour
     public void AnimatePlayer(){
         movementX = Input.GetAxisRaw("Horizontal");
         if(movementX < 0){
+            anim.SetBool("Walk", true);
             sr.flipX = true;
-        } else  {
+        } else if(movementX > 0)  {
+            anim.SetBool("Walk", true);
             sr.flipX = false;
+
+        } else {
+            anim.SetBool("Walk", false);
         }
     }
 

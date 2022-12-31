@@ -806,6 +806,7 @@ MonoBehaviour:
   - {fileID: 3817866061188706352, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
   - {fileID: 5615952028918316682, guid: c7b9f9cfb2473d74ebdc3b7c3c160bea, type: 3}
   chosenPlayer: {fileID: 0}
+  secondPlayer: {fileID: 0}
 --- !u!4 &1743175091
 Transform:
   m_ObjectHideFlags: 0

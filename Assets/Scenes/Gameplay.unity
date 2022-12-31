@@ -4703,6 +4703,7 @@ MonoBehaviour:
   fridge: {fileID: 0}
   tv: {fileID: 0}
   closet: {fileID: 0}
+  player: {fileID: 0}
   typeItems:
   - {fileID: 1668339216}
   - {fileID: 1558065385}
