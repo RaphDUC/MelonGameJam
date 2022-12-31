@@ -8,12 +8,15 @@ public class Items : MonoBehaviour
     public Transform tv;
     public Transform closet;
 
+    public GameObject player;
     public GameObject[] typeItems;
     // Start is called before the first frame update
     void Awake(){
         fridge = typeItems[0].transform;
         tv = typeItems[1].transform;
         closet = typeItems[2].transform;
+
+        player = GameObject.FindWithTag("Player");
 
     }
     void Start()
@@ -25,5 +28,9 @@ public class Items : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void pickupItems(){
+
     }
 }
