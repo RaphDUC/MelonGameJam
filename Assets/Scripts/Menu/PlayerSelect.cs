@@ -12,7 +12,7 @@ public class PlayerSelect : MonoBehaviour
 
     [HideInInspector]
     public GameObject chosenPlayer;
-
+    [HideInInspector]
     public GameObject secondPlayer;
 
     void Awake(){
@@ -29,12 +29,14 @@ public class PlayerSelect : MonoBehaviour
         string indexPlayer = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
         
             if(indexPlayer == "0"){
-                chosenPlayer = players[0];
                 secondPlayer = players[1];
+                chosenPlayer = players[0];
+                
             } 
             else if(indexPlayer == "1") {
-                chosenPlayer = players[1];
                 secondPlayer = players[0];
+                chosenPlayer = players[1];
+                
             }
 
         SceneManager.LoadScene("Gameplay");
