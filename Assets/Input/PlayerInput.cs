@@ -35,6 +35,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pickup_Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb42d1b7-2005-4181-a615-5b1f078b7e62"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -103,6 +112,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6e4c610-f493-4062-9292-90ff816b2893"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup_Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b52bc84-8948-4e78-94ad-79e2ab11d8b0"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pickup_Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -112,6 +143,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Pickup_Interact = m_Player.FindAction("Pickup_Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -172,11 +204,13 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_Pickup_Interact;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @Pickup_Interact => m_Wrapper.m_Player_Pickup_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -189,6 +223,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
+                @Pickup_Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup_Interact;
+                @Pickup_Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup_Interact;
+                @Pickup_Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickup_Interact;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -196,6 +233,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Pickup_Interact.started += instance.OnPickup_Interact;
+                @Pickup_Interact.performed += instance.OnPickup_Interact;
+                @Pickup_Interact.canceled += instance.OnPickup_Interact;
             }
         }
     }
@@ -203,5 +243,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnPickup_Interact(InputAction.CallbackContext context);
     }
 }

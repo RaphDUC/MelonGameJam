@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pickup_Interact",
+                    "type": "Button",
+                    "id": "eb42d1b7-2005-4181-a615-5b1f078b7e62",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -79,6 +88,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6e4c610-f493-4062-9292-90ff816b2893",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup_Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b52bc84-8948-4e78-94ad-79e2ab11d8b0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup_Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
