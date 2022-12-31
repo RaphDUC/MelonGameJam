@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     {
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
         
     }
 

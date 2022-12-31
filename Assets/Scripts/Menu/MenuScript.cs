@@ -31,7 +31,7 @@ public class MenuScript : MonoBehaviour
     public void StartGameA()
     {
         Debug.Log("Game's launched !");
-        //SceneManager.LoadScene("House");
+        SceneManager.LoadScene("Gameplay");
     }
 
     
