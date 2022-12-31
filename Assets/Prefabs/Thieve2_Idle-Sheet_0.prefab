@@ -123,6 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
+  pickUpInteract:
+    m_Name: Pick Up Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 444fa8a8-a786-49e7-8215-3a4f0e2aebf8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!61 &5615952028918316680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,3 +201,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
+  pickUpInteract:
+    m_Name: Pick Up Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 86e9c022-7963-4ca8-9bb7-b403b887d04e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
