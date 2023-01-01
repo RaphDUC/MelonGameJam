@@ -54,14 +54,14 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnEnable()
-    {
-        pickUpInteract = playerInput.Player.Pickup_Interact;
-        pickUpInteract.Enable();
-    }
+    // private void OnEnable()
+    // {
+    //     pickUpInteract = playerInput.Player.Pickup_Interact;
+    //     pickUpInteract.Enable();
+    // }
 
-    private void OnDisable()
-    {
-        pickUpInteract.Disable();
-    }
+    // private void OnDisable()
+    // {
+    //     pickUpInteract.Disable();
+    // }
 }

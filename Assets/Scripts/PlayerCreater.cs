@@ -9,15 +9,15 @@ public class PlayerCreater : MonoBehaviour
     public GameObject secondPlayer;
     public PlayerInputManager manager;
 
-    void Awake(){
-         newPlayer = Instantiate(PlayerSelect.instance.chosenPlayer);
-         secondPlayer = PlayerSelect.instance.secondPlayer;
+    // void Awake(){
+    //      newPlayer = Instantiate(PlayerSelect.instance.chosenPlayer);
+    //      secondPlayer = PlayerSelect.instance.secondPlayer;
          
-    }
+    // }
 
-    public void JoinPlayer(PlayerInput input){
-        manager.playerPrefab = secondPlayer;
-    }
+    // public void JoinPlayer(PlayerInput input){
+    //     manager.playerPrefab = secondPlayer;
+    // }
 
 
 }

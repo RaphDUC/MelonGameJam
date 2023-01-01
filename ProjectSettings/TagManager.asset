@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Monster
   - Collector
+  - Ressources
+  - Fridge
   layers:
   - Default
   - TransparentFX
