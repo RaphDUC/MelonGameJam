@@ -1556,6 +1556,14 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.011193875
       objectReference: {fileID: 0}
+    - target: {fileID: 1395786087, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
+      propertyPath: playerSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817866061188706348, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3817866061188706351, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1606,7 +1614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817866061188706355, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13bf9247d4257be4c8c74c56645bfbd2, type: 3}

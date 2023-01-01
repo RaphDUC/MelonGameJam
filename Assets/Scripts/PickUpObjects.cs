@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using System;
-
 using UnityEngine.InputSystem;
 
 public class PickUpObjects : MonoBehaviour
@@ -40,44 +38,31 @@ public class PickUpObjects : MonoBehaviour
           hitInfo = Physics2D.Raycast(transform.position, Vector2.right, 2f, layerMask);  
      }
 
+     }
 
-     if (hitInfo.collider)
+     void OnPickup_Interact(InputValue value){
+          if (hitInfo.collider)
          {
-               if(sr.flipX == true){
-                    Debug.DrawRay(transform.position, Vector2.left * 2f, Color.green);        
-               }
+                       // //Prendre l'item
+             if (value.isPressed && grabbedObject == null)
+             {
+               Debug.Log("action called !");
 
-               else {
-                    Debug.DrawRay(transform.position, Vector2.right * 2f, Color.green);
-               }
-
-            Debug.Log(hitInfo.collider.name);
-            // //Prendre l'item
-            // if (Keyboard.current.spaceKey.wasPressedThisFrame && grabbedObject == null)
-            // {
-            //     grabbedObject = hitInfoFridge.collider.gameObject;
-            //     grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            //     grabbedObject.transform.position = grabPoint.position;
-            //     grabbedObject.transform.SetParent(transform);
-            // }
+               //   grabbedObject = hitInfoFridge.collider.gameObject;
+               //   grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+               //   grabbedObject.transform.position = grabPoint.position;
+               //   grabbedObject.transform.SetParent(transform);
+             }
 
             // //Rel�cher l'objet
-            // else if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            // {
-            //     grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
-            //     grabbedObject.transform.SetParent(null);
-    //         //     grabbedObject = null;
-    //         // }
-            
+             else if (value.isPressed)
+             {
+               Debug.Log("objet relaché");
+                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                 grabbedObject.transform.SetParent(null);
+                 grabbedObject = null;
+             }           
          } 
-         else {
-               if(sr.flipX == true){
-                    Debug.DrawRay(transform.position, Vector2.left * 2f, Color.red);        
-               }
 
-               else {
-                    Debug.DrawRay(transform.position, Vector2.right * 2f, Color.red);
-               }
-         }
      }
 }

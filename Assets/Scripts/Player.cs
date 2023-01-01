@@ -43,11 +43,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PickupInteract(InputAction.CallbackContext context)
-    {
-        Debug.Log("Interact");
+    // public void PickupInteract(InputAction.CallbackContext context)
+    // {
+    //     Debug.Log("Interact");
 
-    }
+    // }
     // Start is called before the first frame update
     void Start()
     {
