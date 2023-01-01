@@ -4774,11 +4774,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 6
-=======
   m_RootOrder: 4
->>>>>>> 7dfa64500092c72a8cd6dd143436aba2b6f0d7fe
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1365059419
 MonoBehaviour:
