@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class ThirstSlider : MonoBehaviour
     public Slider thirstSlider;
     public static float thirst;
     public float maxthirst = 100f;
+    public static Boolean thirsty = false;
 
 
     // Start is called before the first frame update
@@ -32,7 +34,8 @@ public class ThirstSlider : MonoBehaviour
 
         if (thirst <= 0f)
         {
-            Debug.Log("Starving !");
+            Debug.Log("Thirsty !");
+            thirsty = true;
         }
     }
 }

@@ -6990,6 +6990,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerSlider: {fileID: 164715013}
   maxHunger: 100
+--- !u!114 &1909663730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909663723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe9b25a43f2ecf43b0ab5f1cd1de926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirstSlider: {fileID: 763697246}
+  maxthirst: 100
+--- !u!114 &1909663731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909663723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4db1a6853d26048aafa358815ef161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tvSlider: {fileID: 1580042926}
+  maxtv: 100
 --- !u!1 &1910231800
 GameObject:
   m_ObjectHideFlags: 0

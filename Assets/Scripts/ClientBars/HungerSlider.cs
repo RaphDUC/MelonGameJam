@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class HungerSlider : MonoBehaviour
     public Slider hungerSlider;
     public static float hunger;
     public float maxHunger = 100f;
+    public static Boolean hungry = true;
 
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class HungerSlider : MonoBehaviour
         if (hunger <= 0f)
         {
             Debug.Log("Starving !");
+            hungry = true;
         }
     }
 }
