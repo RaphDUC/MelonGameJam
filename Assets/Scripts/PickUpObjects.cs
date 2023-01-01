@@ -15,28 +15,42 @@ public class PickUpObjects : MonoBehaviour
     private RaycastHit2D hitInfo;
 
     private GameObject grabbedObject;
-    private int layerIndex;
+
     private int layerMask;
+    private SpriteRenderer sr;
     
     void Awake() {
         
-       
+       layerMask = LayerMask.GetMask("Objects");
+       sr = GetComponent<SpriteRenderer>();
     }
     // Start is called before the first frame update
     void Start()
     {
-         layerMask = LayerMask.GetMask("Objects");
-         hitInfo = Physics2D.Raycast(transform.position, transform.right, 2f, layerMask);
+         
+         
     }
 
     // Update is called once per frame
     void Update()
     {     
-    
+     if(sr.flipX == true){
+          hitInfo = Physics2D.Raycast(transform.position, Vector2.left, 2f, layerMask);          
+     } else {
+          hitInfo = Physics2D.Raycast(transform.position, Vector2.right, 2f, layerMask);  
+     }
+
 
      if (hitInfo.collider)
          {
-            Debug.DrawRay(transform.position, transform.right * 2f, Color.green);
+               if(sr.flipX == true){
+                    Debug.DrawRay(transform.position, Vector2.left * 2f, Color.green);        
+               }
+
+               else {
+                    Debug.DrawRay(transform.position, Vector2.right * 2f, Color.green);
+               }
+
             Debug.Log(hitInfo.collider.name);
             // //Prendre l'item
             // if (Keyboard.current.spaceKey.wasPressedThisFrame && grabbedObject == null)
@@ -55,8 +69,15 @@ public class PickUpObjects : MonoBehaviour
     //         //     grabbedObject = null;
     //         // }
             
-         } else {
-            Debug.DrawRay(transform.position, transform.right * 2f, Color.red);
+         } 
+         else {
+               if(sr.flipX == true){
+                    Debug.DrawRay(transform.position, Vector2.left * 2f, Color.red);        
+               }
+
+               else {
+                    Debug.DrawRay(transform.position, Vector2.right * 2f, Color.red);
+               }
          }
      }
 }
