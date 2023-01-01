@@ -19,6 +19,7 @@ public class PlayerSelect : MonoBehaviour
 
         if(!instance){
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
     } else {
         Destroy(gameObject);
     }

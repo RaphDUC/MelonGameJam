@@ -12,7 +12,6 @@ public class CreatingPlayer : MonoBehaviour
     void Awake(){
          newPlayer = Instantiate(PlayerSelect.instance.chosenPlayer);
          otherPlayer = PlayerSelect.instance.secondPlayer;
-         Debug.Log(otherPlayer);
          
     }
 
@@ -27,9 +26,11 @@ public class CreatingPlayer : MonoBehaviour
     {
         
     }
-    
-     public void PlayerJoined() { 
-        Debug.Log(otherPlayer);
+    public void PlayerJoinCalled(){
+     StartCoroutine(PlayerJoined());
+    }
+     public IEnumerator PlayerJoined() { 
+          yield return new WaitForSeconds(2f);
     manager.playerPrefab = otherPlayer;
  }
 }

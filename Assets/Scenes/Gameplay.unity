@@ -3840,7 +3840,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1365059419}
         m_TargetAssemblyTypeName: CreatingPlayer, Assembly-CSharp
-        m_MethodName: PlayerJoined
+        m_MethodName: PlayerJoinCalled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3903,7 +3903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newPlayer: {fileID: 0}
-  secondPlayer: {fileID: 0}
+  otherPlayer: {fileID: 0}
   manager: {fileID: 1365059417}
 --- !u!1 &1392755892
 GameObject:
