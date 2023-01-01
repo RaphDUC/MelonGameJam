@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,9 @@ public class Player : MonoBehaviour
     private Vector2 movementInput;
     private float movementX;
     public float playerSpeed = 2.0f;
+
+    public PlayerInput playerInput;
+    public InputAction pickUpInteract;
 
     private void Awake()
     {
@@ -44,9 +48,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void PickupInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("Interact");
+
+    }
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        pickUpInteract = playerInput.Player.Pickup_Interact;
+        pickUpInteract.Enable();
+    }
+
+    private void OnDisable()
+    {
+        pickUpInteract.Disable();
     }
 }

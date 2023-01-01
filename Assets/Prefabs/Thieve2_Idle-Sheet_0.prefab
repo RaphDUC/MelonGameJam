@@ -123,6 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 2
+  pickUpInteract:
+    m_Name: Pick Up Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 444fa8a8-a786-49e7-8215-3a4f0e2aebf8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!61 &5615952028918316680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,14 +197,17 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5615952028918316682}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a454221f0f24747419c29f727049fd73, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d65364c0bbb0654b958c1b19a94edbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 2
+  pickUpInteract:
+    m_Name: Pick Up Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 86e9c022-7963-4ca8-9bb7-b403b887d04e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
