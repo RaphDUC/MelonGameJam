@@ -8,7 +8,6 @@ public class PickUpObjects : MonoBehaviour
 {
 
     [SerializeField]
-    private Transform grabPoint;
 
     private RaycastHit2D hitInfo;
 
@@ -48,21 +47,20 @@ public class PickUpObjects : MonoBehaviour
              {
                Debug.Log("action called !");
 
-               //   grabbedObject = hitInfoFridge.collider.gameObject;
-               //   grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
-               //   grabbedObject.transform.position = grabPoint.position;
-               //   grabbedObject.transform.SetParent(transform);
+               grabbedObject = Instantiate(FridgeItems.instance.items);
+               grabbedObject.transform.position = transform.position + new Vector3(1f, 0f, 0f);
+               grabbedObject.transform.SetParent(transform);
              }
 
-            // //Rel�cher l'objet
-             else if (value.isPressed)
+            // //Rel�cher l'objet         
+         } 
+
+           if (!value.isPressed && grabbedObject != null)
              {
                Debug.Log("objet relaché");
-                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                  grabbedObject.transform.SetParent(null);
-                 grabbedObject = null;
-             }           
-         } 
+                 Destroy(grabbedObject);
+             }  
 
      }
 }
