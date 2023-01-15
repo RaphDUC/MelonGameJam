@@ -32,9 +32,9 @@ public class PickUpObjects : MonoBehaviour
     void Update()
     {     
      if(sr.flipX == true){
-          hitInfo = Physics2D.Raycast(transform.position, Vector2.left, 2f, layerMask);          
+          hitInfo = Physics2D.Raycast(transform.position, Vector2.left, 0.5f, layerMask);          
      } else {
-          hitInfo = Physics2D.Raycast(transform.position, Vector2.right, 2f, layerMask);  
+          hitInfo = Physics2D.Raycast(transform.position, Vector2.right, 0.5f, layerMask);  
      }
 
      }
@@ -76,6 +76,15 @@ public class PickUpObjects : MonoBehaviour
                
                grabbedObject.transform.SetParent(transform);
              }                
+          } else if(hitInfo.collider.name == "TV_OFF"){
+               // allume la tv
+               if(TVTurnOnOff.instance.isOn == false){
+                    TVTurnOnOff.instance.isOn = true;
+                    Debug.Log("lol");
+               } else {
+                    TVTurnOnOff.instance.isOn = false;
+               }
+               
           }
 
 
